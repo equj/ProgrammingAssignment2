@@ -5,12 +5,17 @@
 
 
 makeCacheMatrix <- function(x = matrix()) {
+## creates empty object m
   m <- NULL
+## defines function set that creates local object x that stores argument y
+## also creates local definition for object m as empty
   set <- function(y) {
     x <<- y
     m <<- NULL
   }
+## defines function get
   get <- function() x
+## defines function setinverse that takes function solve and fill object with solve
   setinverse <- function(solve) m <<- solve
   getinverse <- function() m
   list(set = set, get = get,
